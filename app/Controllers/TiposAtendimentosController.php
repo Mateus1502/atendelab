@@ -47,13 +47,13 @@ class TiposAtendimentosController
         header('Content-Type: application/json');
 
         $stmt = $this->pdo->prepare(
-            "INSERT INTO tipos_atendimentos (nome, descricao, status)
-             VALUES (:nome, :descricao, :status)"
+            "INSERT INTO tipos_atendimentos (nome, descricao_atendimentos, status)
+             VALUES (:nome, :descricao_atendimentos, :status)"
         );
 
         $stmt->execute([
             ':nome'      => $_POST['nome']     ?? '',
-            ':descricao' => $_POST['descricao'] ?? '',
+            ':descricao_atendimentos' => $_POST['descricao_atendimentos'] ?? '',
             ':status'    => $_POST['status']    ?? 'ativo',
         ]);
 
